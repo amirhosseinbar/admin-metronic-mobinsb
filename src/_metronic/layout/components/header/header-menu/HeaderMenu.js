@@ -2,8 +2,7 @@
 import React from "react";
 import { useLocation } from "react-router";
 import { NavLink } from "react-router-dom";
-import SVG from "react-inlinesvg";
-import { toAbsoluteUrl, checkIsActive } from "../../../../_helpers";
+import { checkIsActive } from "../../../../_helpers";
 
 export function HeaderMenu({ layoutProps }) {
     const location = useLocation();
@@ -13,7 +12,7 @@ export function HeaderMenu({ layoutProps }) {
 
     return <div
         id="kt_header_menu"
-        className={`header-menu header-menu-left header-menu-mobile ${layoutProps.ktMenuClasses}`}
+        className={`header-menu header-menu-mobile ${layoutProps.ktMenuClasses}`}
         {...layoutProps.headerMenuAttributes}
     >
         {/*begin::Header Nav*/}
@@ -21,12 +20,11 @@ export function HeaderMenu({ layoutProps }) {
             {/*begin::1 Level*/}
             <li className={`menu-item menu-item-rel ${getMenuItemActive('/dashboard')}`}>
                 <NavLink className="menu-link" to="/dashboard">
-                    <span className="menu-text">Dashboard-header</span>
+                    <span className="menu-text">Dashboard</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
-
         </ul>
         {/*end::Header Nav*/}
     </div>;
