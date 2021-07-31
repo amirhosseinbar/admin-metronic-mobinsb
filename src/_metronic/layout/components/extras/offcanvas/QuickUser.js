@@ -1,15 +1,14 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-script-url,jsx-a11y/anchor-is-valid,no-undef */
 import React from "react";
 import { Link } from "react-router-dom";
-import { shallowEqual, useSelector } from "react-redux";
 import SVG from "react-inlinesvg";
+import { shallowEqual, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toAbsoluteUrl } from "../../../../_helpers";
 
 export function QuickUser() {
   const history = useHistory();
   const user = useSelector((state) => state.auth.user, shallowEqual);
-
   const logoutClick = () => {
     const toggle = document.getElementById("kt_quick_user_toggle");
     if (toggle) {
@@ -19,15 +18,17 @@ export function QuickUser() {
   };
 
   return (
-    <div id="kt_quick_user" className="offcanvas offcanvas-left offcanvas p-10">
+    <div
+      id="kt_quick_user"
+      className="offcanvas offcanvas-right offcanvas p-10"
+    >
       <div className="offcanvas-header d-flex align-items-center justify-content-between pb-5">
         <h3 className="font-weight-bold m-0">
           User Profile
           <small className="text-muted font-size-sm ml-2">12 messages</small>
         </h3>
         <a
-          href="#"
-          className="btn btn-xs btn-icon btn-light btn-hover-primary"
+          className="btn btn-xs btn-icon btn-light btn-hover-primary cursor-pointer"
           id="kt_quick_user_close"
         >
           <i className="ki ki-close icon-xs text-muted" />
@@ -40,9 +41,7 @@ export function QuickUser() {
             <div
               className="symbol-label"
               style={{
-                backgroundImage: `url(${toAbsoluteUrl(
-                  "/media/users/300_21.jpg"
-                )})`,
+                backgroundImage: `url(${user.pic})`,
               }}
             />
             <i className="symbol-badge bg-success" />
@@ -56,7 +55,7 @@ export function QuickUser() {
             </a>
             <div className="text-muted mt-1">{user.occupation}</div>
             <div className="navi mt-2">
-              <a href="#" className="navi-item">
+              <a className="navi-item cursor-pointer">
                 <span className="navi-link p-0 pb-2">
                   <span className="navi-icon mr-1">
                     <span className="svg-icon-lg svg-icon-primary">
@@ -133,7 +132,7 @@ export function QuickUser() {
             </div>
           </Link>
 
-          <Link to="/user-profile" className="navi-item">
+          <a href="/user/profile" className="navi-item">
             <div className="navi-link">
               <div className="symbol symbol-40 bg-light mr-3">
                 <div className="symbol-label">
@@ -151,9 +150,9 @@ export function QuickUser() {
                 <div className="text-muted">Logs and notifications</div>
               </div>
             </div>
-          </Link>
+          </a>
 
-          <Link to="/user-profile" className="navi-item">
+          <a href="/user/profile" className="navi-item">
             <div className="navi-link">
               <div className="symbol symbol-40 bg-light mr-3">
                 <div className="symbol-label">
@@ -171,7 +170,7 @@ export function QuickUser() {
                 <div className="text-muted">latest tasks and projects</div>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
 
         <div className="separator separator-dashed my-7"></div>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useLocation } from "react-router";
@@ -9,7 +10,8 @@ export function AsideMenuList({ layoutProps }) {
   const location = useLocation();
   const getMenuItemActive = (url, hasSubmenu = false) => {
     return checkIsActive(location, url)
-      ? ` ${!hasSubmenu && "menu-item-active"} menu-item-open `
+      ? ` ${!hasSubmenu &&
+          "menu-item-active"} menu-item-open menu-item-not-hightlighted`
       : "";
   };
 
@@ -44,6 +46,14 @@ export function AsideMenuList({ layoutProps }) {
           </NavLink>
         </li>
         {/*end::1 Level*/}
+
+        {/* Components */}
+        {/* begin::section */}
+        <li className="menu-section ">
+          <h4 className="menu-text">Components</h4>
+          <i className="menu-icon flaticon-more-v2"></i>
+        </li>
+        {/* end:: section */}
 
         {/*begin::1 Level*/}
         <li
@@ -93,7 +103,7 @@ export function AsideMenuList({ layoutProps }) {
           <div className="menu-submenu ">
             <i className="menu-arrow" />
             <ul className="menu-subnav">
-              <li className="menu-item  menu-item-parent" aria-haspopup="true">
+              <li className="menu-item  menu-item-parent" aria-haspopup="false">
                 <span className="menu-link">
                   <span className="menu-text">Error Pages</span>
                 </span>
