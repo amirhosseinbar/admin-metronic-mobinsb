@@ -17,6 +17,9 @@ import { ScrollTop } from "./extras/ScrollTop";
 import { StickyToolbar } from "./extras/StickyToolbar";
 import { AnimateLoading } from "../../_partials/controls";
 
+import { NotificationAlert } from "./../../../app/common/components/notificationAlert";
+
+
 export function Layout({ children }) {
   const uiService = useHtmlClassService();
   // Layout settings (cssClasses/cssAttributes)
@@ -77,6 +80,7 @@ export function Layout({ children }) {
       </div>
       <QuickUser />
       <QuickPanel />
+      <NotificationAlert />
       <QuickNotification />
       <ScrollTop />
       <QuickSearch />
