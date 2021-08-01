@@ -1,14 +1,19 @@
 import React from "react";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 
 const theme = createMuiTheme(
   /**
    * @see https://material-ui.com/customization/themes/#theme-configuration-variables
    */
   {
-    // direction: "rtl",
+    direction: "rtl",
     typography: {
-      fontFamily: ["Poppins"].join(",")
+      fontFamily: ["iransans"].join(",")
     },
 
     palette: {
@@ -52,6 +57,11 @@ const theme = createMuiTheme(
 
 export function MaterialThemeProvider(props) {
   const { children } = props;
-
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <StylesProvider jss={jss}>
+        {children}
+      </StylesProvider>
+    </ThemeProvider>
+  );
 }
