@@ -39,30 +39,30 @@ export function AuthPage() {
               {/* start:: Aside content */}
               <div className="flex-column-fluid d-flex flex-column justify-content-center">
                 <h3 className="font-size-h1 mb-5 text-white">
-                  Welcome to Metronic!
+                  پنل مدیریت باشگاه مشتریان مبین سرمایه
                 </h3>
                 <p className="font-weight-lighter text-white opacity-80">
-                  The ultimate Bootstrap & React 16 admin theme framework for
-                  next generation web apps.
+                  
                 </p>
               </div>
               {/* end:: Aside content */}
 
               {/* start:: Aside footer for desktop */}
               <div className="d-none flex-column-auto d-lg-flex justify-content-between mt-10">
-                <div className="opacity-70 font-weight-bold	text-white">
-                  &copy; 2020 Metronic
-                </div>
+                {/* <div className="opacity-70 font-weight-bold	text-white">
+                 
+                </div> */}
                 <div className="d-flex">
-                  <Link to="/terms" className="text-white">
-                    Privacy
+                  {/* <Link to="/terms" className="text-white">
+                    شرایط و قوانین
                   </Link>
                   <Link to="/terms" className="text-white ml-10">
                     Legal
                   </Link>
                   <Link to="/terms" className="text-white ml-10">
-                    Contact
-                  </Link>
+                    تماس
+                  </Link> */}
+                  <p className="text-light">© تمامی حقوق این سایت محفوظ و متعلق به شرکت داده پردازی گرادیان می باشد</p>
                 </div>
               </div>
               {/* end:: Aside footer for desktop */}
@@ -75,16 +75,16 @@ export function AuthPage() {
           <div className="d-flex flex-column flex-row-fluid position-relative p-7 overflow-hidden">
             {/*begin::Content header*/}
             <div className="position-absolute top-0 right-0 text-right mt-5 mb-15 mb-lg-0 flex-column-auto justify-content-center py-5 px-10">
-              <span className="font-weight-bold text-dark-50">
-                Don't have an account yet?
+              {/* <span className="font-weight-bold text-dark-50">
+                حساب کاربری ندارید؟
               </span>
               <Link
                 to="/auth/registration"
                 className="font-weight-bold ml-2"
                 id="kt_login_signup"
               >
-                Sign Up!
-              </Link>
+                ثبت نام کنید
+              </Link> */}
             </div>
             {/*end::Content header*/}
 
