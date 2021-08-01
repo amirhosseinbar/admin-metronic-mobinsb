@@ -9,6 +9,10 @@ const UserProfilepage = lazy(() =>
   import("./modules/UserProfile/UserProfilePage")
 );
 
+const InsertGift = lazy(() =>
+  import("./pages/gift/insertGift")
+);
+
 export default function BasePage() {
   // useEffect(() => {
   //   console.log('Base page');
@@ -20,13 +24,16 @@ export default function BasePage() {
       <Switch>
         {
           /* Redirect from root URL to /dashboard. */
-          <Redirect exact from="/" to="/dashboard" />
+          <Redirect exact from="/" to="/insert_gift" />
         }
         <ContentRoute path="/dashboard" component={DashboardPage} />
         <ContentRoute path="/builder" component={BuilderPage} />
         <ContentRoute path="/my-page" component={MyPage} />
         <Route path="/user-profile" component={UserProfilepage} />
+        <ContentRoute path="/insert_gift" component={InsertGift} />
         <Redirect to="error/error-v1" />
+
+
       </Switch>
     </Suspense>
   );
