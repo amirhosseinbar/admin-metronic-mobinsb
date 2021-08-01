@@ -73,8 +73,8 @@ function Login(props) {
       setTimeout(() => {
         login(values.email, values.password)
           .then(({ data: { authToken } }) => {
+            console.log("data",authToken)
             disableLoading();
-
             props.login(authToken);
           })
           .catch(() => {
@@ -91,17 +91,49 @@ function Login(props) {
       }, 1000);
     },
   });
+  // const formik = useFormik({
+  //   initialValues,
+  //   validationSchema: LoginSchema,
+  //   onSubmit: (values, { setStatus, setSubmitting }) => {
+  //     enableLoading();
+  //     setTimeout(() => {
+  //       login(values.email, values.password)
+  //         .then((res) => {
+  //   if (!Object.keys(res.data.response.data).length) {
+  //     setStatus(
+  //       intl.formatMessage({
+  //         id: "AUTH.VALIDATION.INVALID_LOGIN",
+  //       })
+  //     );
+  //     return
+  //   }
+  //   disableLoading();
+  //   props.login(res.data.response.data);
+  //   handleRoute()
+  // })
+  //         .catch(() => {
+  //           setStatus(
+  //             intl.formatMessage({
+  //               id: "AUTH.VALIDATION.INVALID_LOGIN",
+  //             })
+  //           );
+  //         })
+  //         .finally(() => {
+  //           disableLoading();
+  //           setSubmitting(false);
+  //         });
+  //     }, 1000);
+  //   },
+  // });
 
   return (
     <div className="login-form login-signin" id="kt_login_signin_form">
       {/* begin::Head */}
       <div className="text-center mb-10 mb-lg-20">
-        <h3 className="font-size-h1">
-          <FormattedMessage id="AUTH.LOGIN.TITLE" />
-        </h3>
-        <p className="text-muted font-weight-bold">
-          Enter your username and password
-        </p>
+        <h1 className="font-size-h1 font-weight-bolder">ورود به پنل مدیریت</h1>
+        {/* <p className="font-weight-bold alert-info p-5" style={{borderRadius:'7px',fontSize:'14px'}}>
+          نام کاربری و رمز عبور خود را وارد نمایید
+        </p> */}
       </div>
       {/* end::Head */}
 
@@ -117,8 +149,7 @@ function Login(props) {
         ) : (
           <div className="mb-10 alert alert-custom alert-light-info alert-dismissible">
             <div className="alert-text ">
-              Use account <strong>admin@demo.com</strong> and password{" "}
-              <strong>demo</strong> to continue.
+              کد ملی و رمز عبور خود را وارد کنید
             </div>
           </div>
         )}
@@ -126,7 +157,7 @@ function Login(props) {
         <div className="form-group fv-plugins-icon-container">
           <input
             placeholder="Email"
-            type="email"
+            type="text"
             className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
               "email"
             )}`}
@@ -155,21 +186,21 @@ function Login(props) {
             </div>
           ) : null}
         </div>
-        <div className="form-group d-flex flex-wrap justify-content-between align-items-center">
-          <Link
+        <div className="form-group d-flex flex-wrap justify-content-beetween align-items-center">
+          {/* <Link
             to="/auth/forgot-password"
             className="text-dark-50 text-hover-primary my-3 mr-2"
             id="kt_login_forgot"
           >
-            <FormattedMessage id="AUTH.GENERAL.FORGOT_BUTTON" />
-          </Link>
+            
+          </Link> */}
           <button
             id="kt_login_signin_submit"
             type="submit"
             disabled={formik.isSubmitting}
             className={`btn btn-primary font-weight-bold px-9 py-4 my-3`}
           >
-            <span>Sign In</span>
+            <span>ورود</span>
             {loading && <span className="ml-3 spinner spinner-white"></span>}
           </button>
         </div>
