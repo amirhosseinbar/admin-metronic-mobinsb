@@ -5,6 +5,25 @@
 // Theme Styles
 @import "./_metronic/_assets/sass/style.react.scss";
 
+@font-face {
+  src: url("/media/fonts/IRANSansWeb/IRANSansWeb.eot");
+  src: url("/media/fonts/IRANSansWeb/IRANSansWeb.Web");
+  src: url("/media/fonts/IRANSansWeb/IRANSansWeb.woff");
+  src: url("/media/fonts/IRANSansWeb/IRANSansWeb.woff2");
+
+  font-family: "iransans";
+}
+
+
+body,
+input,
+Button,
+.Toastify__toast 
+{
+  font-family: "iransans" !important;
+}
+
+
 // Default Layout themes
 @import "./_metronic/_assets/sass/themes/layout/header/base/light.scss";
 @import "./_metronic/_assets/sass/themes/layout/header/menu/light.scss";

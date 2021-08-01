@@ -14,6 +14,9 @@ import {QuickUser} from "./extras/offcanvas/QuickUser";
 import {ScrollTop} from "./extras/ScrollTop";
 import {StickyToolbar} from "./extras/StickyToolbar";
 
+import { NotificationAlert } from "./../../../app/common/components/notificationAlert";
+
+
 export function Layout({ children }) {
     const uiService = useHtmlClassService();
     // Layout settings (cssClasses/cssAttributes)
@@ -72,6 +75,7 @@ export function Layout({ children }) {
                 {/*end::Page*/}
             </div>
             <QuickUser/>
+            <NotificationAlert />
             <QuickPanel/>
             <ScrollTop/>
             <StickyToolbar/>
